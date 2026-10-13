@@ -43,6 +43,10 @@ public class Student {
         completedPrerequisites.add(courseCode);
     }
 
+    public void removeCompletedPrerequisite(String courseCode) {
+        completedPrerequisites.remove(courseCode);
+    }
+
     public boolean hasCompletedPrerequisite(String courseCode) {
         return completedPrerequisites.contains(courseCode);
     }
@@ -54,5 +58,10 @@ public class Student {
     public void addRegistration(String courseCode, int credits) {
         registeredCourses.add(courseCode);
         totalCredits += credits;
+    }
+
+    public void removeRegistration(String courseCode, int credits) {
+        registeredCourses.remove(courseCode);
+        totalCredits -= credits;
     }
 }

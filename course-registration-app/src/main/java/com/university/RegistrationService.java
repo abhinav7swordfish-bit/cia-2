@@ -38,4 +38,22 @@ public class RegistrationService {
 
         return true;
     }
+
+
+    public boolean withdraw(Student student, Course course) {
+
+	if (student == null || course == null) {
+	    return false;
+   	}
+
+	if (!student.isRegistered(course.getCourseCode())) {
+	    return false;
+	}
+
+	student.removeCompletedPrerequisite(course.getCourseCode());
+	student.removeRegistration(course.getCourseCode(), course.getCredits());
+	course.decrementEnrollment();
+
+	return true;
+	}
 }
