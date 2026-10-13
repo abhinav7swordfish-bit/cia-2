@@ -37,7 +37,6 @@ pipeline {
 
     post {
         success {
-            archiveArtifacts artifacts: 'course-registration-app/target/*.jar',
 
             echo 'Build, tests, and packaging completed'
         }
