@@ -6,6 +6,10 @@ pipeline {
         maven 'Maven3'
     }
 
+    triggers {
+	cron('H/15 * * * *')
+    }
+
     stages {
         stage('Checkout') {
             steps {

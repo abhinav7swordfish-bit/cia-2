@@ -177,7 +177,6 @@ class RegistrationServiceTest {
         Student student1 = new Student("S101", "Anita");
         Student student2 = new Student("S102", "Abhi");
 
-        // Fill the first seat.
         boolean firstResult = service.register(student1, course);
 
         assertTrue(firstResult);
@@ -185,7 +184,6 @@ class RegistrationServiceTest {
         assertEquals(1, course.getCurrentEnrollment());
         assertEquals(4, student1.getTotalCredits());
 
-        // Exactly one seat remains. The second registration must succeed.
         boolean secondResult = service.register(student2, course);
 
         assertTrue(secondResult);
