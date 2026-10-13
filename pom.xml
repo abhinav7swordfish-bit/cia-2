@@ -5,6 +5,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+    <packaging>pom</packaging>
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.university</groupId>
@@ -15,18 +17,27 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<junit.version>5.11.0</junit.version>
     </properties>
 
-    <dependencies>
+    <modules>
+        <module>course-registration-app</module>
+    </modules>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.11.0</version>
-            <scope>test</scope>
-        </dependency>
+    <dependencyManagement>
+    
+        <dependencies>
+            <dependency>
 
-    </dependencies>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
